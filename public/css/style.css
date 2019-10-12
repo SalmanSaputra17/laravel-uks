@@ -1,0 +1,22 @@
+.card{
+	border: 2px solid #02AAB0;
+}
+
+.card.custom{
+	border: 2px solid #02AAB0;
+	border-radius: 0;
+}
+
+.card.custom:hover{
+	box-shadow: 0px 10px 12px rgba(0, 0, 0, 0.3);
+	transition: .3s;
+}
+
+.card.custom .btn-info{
+	background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC 0%, #02AAB0 100%);
+	border: none;
+}
+
+.list-group{
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.3);
+}
