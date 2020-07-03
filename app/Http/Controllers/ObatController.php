@@ -41,10 +41,10 @@ class ObatController extends Controller
       return redirect()->route('obat.index')->with('success', 'Data berhasil disimpan');
     }
 
-    public function show()
-    {
+    // public function show()
+    // {
 
-    }
+    // }
 
     public function edit(Obat $obat)
     {
@@ -114,16 +114,15 @@ class ObatController extends Controller
           $i = 1;
 
           foreach ($datas as $data) {
-             
             $datasheet[$i] = array($i,
-                                $data['nama_obat'],
-                                $data['jumlah'],
-                                $data['jenis_obat'],
-                                $data['tanggal_masuk'],
-                                $data['keterangan']
-                             );
-            $i++;
+              $data['nama_obat'],
+              $data['jumlah'],
+              $data['jenis_obat'],
+              $data['tanggal_masuk'],
+              $data['keterangan']
+            );
 
+            $i++;
           }
 
           $sheet->fromArray($datasheet);

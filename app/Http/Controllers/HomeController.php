@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Pasien;
+use App\Pasien2;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +25,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $first = Pasien2::select('id', 'user_id', 'nis', 'nama_pasien', 'rombel_id', 'rayon_id', 'jenis_sakit', 'created_at')
+            ->with(['rombel', 'rayon', 'user']);
+
+        $all = Pasien::select('id', 'user_id', 'nis', 'nama_pasien', 'rombel_id', 'rayon_id', 'jenis_sakit', 'created_at')
+            ->with(['rombel', 'rayon', 'user'])
+            ->union($first)
+            ->get();
+
+        return view('home', compact('all'));
     }
 }

@@ -54,12 +54,6 @@ class PasienController extends Controller
     return redirect()->route('pasien.index')->with('success', 'Data berhasil disimpan');
   }
 
-  public function show()
-  {
-    $pasiens = Pasien::latest()->paginate(env('PER_PAGE'));
-    return view('home', compact('pasiens'));
-  }
-
   public function destroy(Pasien $pasien)
   {
     $pasien->delete();
@@ -111,19 +105,18 @@ class PasienController extends Controller
         $i = 1;
 
         foreach ($datas as $data) {
-           
           $datasheet[$i] = array($i,
-                              $data['nis'],
-                              $data['nama_pasien'],
-                              $data->rombel->rombel,
-                              $data->rayon->rayon,
-                              $data['jenis_sakit'],
-                              $data->obat->nama_obat,
-                              $data['jumlah_obat'],
-                              $data->user->name
-                           );
-          $i++;
+            $data['nis'],
+            $data['nama_pasien'],
+            $data->rombel->rombel,
+            $data->rayon->rayon,
+            $data['jenis_sakit'],
+            $data->obat->nama_obat,
+            $data['jumlah_obat'],
+            $data->user->name
+          );
 
+          $i++;
         }
 
         $sheet->fromArray($datasheet);

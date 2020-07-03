@@ -24,12 +24,6 @@
                     <div class="card-header">Hello !</div>
 
                     <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-
                         Selamat Datang !
                     </div>
                 </div>
@@ -90,7 +84,7 @@
 
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table table-striped table-bordered table-hover" id="latestPatients">
+                  <table class="table table-striped table-hover" id="latestPatients">
                     <thead class="text-center">
                       <tr>
                         <th>No</th>
@@ -99,27 +93,23 @@
                         <th>Rombel</th>
                         <th>Rayon</th>
                         <th>Penyakit</th>
-                        <th>Obat</th>
-                        <th>Jumlah Obat</th>
                         <th>Petugas</th>
                         <th>Waktu</th>
                       </tr>
                     </thead>
                     <tbody class="text-center">
                       <?php $i = 1; ?>
-                      @foreach( $pasiens as $pasien )
-                          <tr>
-                            <td>{{ $i }}</td>
-                            <td>{{ $pasien->nis }}</td>
-                            <td>{{ $pasien->nama_pasien }}</td>
-                            <td>{{ $pasien->rombel->rombel }}</td>
-                            <td>{{ $pasien->rayon->rayon }}</td>
-                            <td>{{ $pasien->jenis_sakit }}</td>
-                            <td>{{ $pasien->obat->nama_obat }}</td>
-                            <td>{{ $pasien->jumlah_obat }}</td>
-                            <td>{{ $pasien->user->name }}</td>
-                            <td>{{ $pasien->created_at->diffForHumans() }}</td>
-                          </tr>
+                      @foreach( $all as $row )
+                        <tr>
+                          <td>{{ $i }}</td>
+                          <td>{{ $row->nis }}</td>
+                          <td>{{ $row->nama_pasien }}</td>
+                          <td>{{ $row->rombel->rombel }}</td>
+                          <td>{{ $row->rayon->rayon }}</td>
+                          <td>{{ $row->jenis_sakit }}</td>
+                          <td>{{ $row->user->name }}</td>
+                          <td>{{ $row->created_at->diffForHumans() }}</td>
+                        </tr>
                       <?php $i++; ?>
                       @endforeach
                     </tbody>
@@ -128,14 +118,9 @@
               </div>
             </div>
 
-            
-
           </div>
         </div>
       </div>
     </section>
-
-
-
 
 @endsection

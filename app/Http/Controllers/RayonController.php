@@ -35,10 +35,10 @@ class RayonController extends Controller
     	return redirect()->route('rayon.index')->with('success', 'Data berhasil disimpan');
     }
 
-    public function show()
-    {
+    // public function show()
+    // {
     	
-    }
+    // }
 
     public function edit(Rayon $rayon)
     {

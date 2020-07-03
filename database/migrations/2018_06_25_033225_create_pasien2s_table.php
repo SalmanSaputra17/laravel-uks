@@ -13,10 +13,10 @@ class CreatePasien2sTable extends Migration
      */
     public function up()
     {
-        Schema::create('pasien2s', function (Blueprint $table) {
+        Schema::create('pasien2', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->integer('nis');
+            $table->string('nis');
             $table->string('nama_pasien');
             $table->integer('rombel_id');
             $table->integer('rayon_id');
@@ -32,6 +32,6 @@ class CreatePasien2sTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pasien2s');
+        Schema::dropIfExists('pasien2');
     }
 }

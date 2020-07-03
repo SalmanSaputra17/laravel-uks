@@ -28,7 +28,7 @@
             <button type="submit" class="btn btn-primary mb-2">Search</button>
           </form>
           <div class="table-responsive">
-            <table class="table table-striped table-bordered table-hover" id="dataRombel">
+            <table class="table table-striped table-hover" id="dataRombel">
               <thead class="text-center">
                 <tr>
                   <th>No</th>

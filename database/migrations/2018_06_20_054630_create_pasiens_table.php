@@ -16,7 +16,7 @@ class CreatePasiensTable extends Migration
         Schema::create('pasiens', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->integer('nis');
+            $table->string('nis');
             $table->string('nama_pasien');
             $table->integer('rombel_id');
             $table->integer('rayon_id');

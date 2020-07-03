@@ -38,10 +38,10 @@ class FasilitasController extends Controller
     return redirect()->route('fasilitas.index')->with('success', 'Data berhasil disimpan');
   }
 
-  public function show()
-  {
+  // public function show()
+  // {
 
-  }
+  // }
 
   public function edit(Fasilitas $fasilitas)
   {
@@ -110,15 +110,14 @@ class FasilitasController extends Controller
         $i = 1;
 
         foreach ($datas as $data) {
-           
           $datasheet[$i] = array($i,
-                              $data['nama_barang'],
-                              $data['jumlah'],
-                              $data['tanggal_masuk'],
-                              $data['keterangan']
-                           );
-          $i++;
+            $data['nama_barang'],
+            $data['jumlah'],
+            $data['tanggal_masuk'],
+            $data['keterangan']
+          );
 
+          $i++;
         }
 
         $sheet->fromArray($datasheet);

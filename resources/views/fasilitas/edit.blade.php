@@ -47,7 +47,7 @@
                 {{ "checked" }}
               @endif
               >
-              <label class="form-check-label" for="inlineRadio1">Barang yang sudah ada</label>
+              <label class="form-check-label" for="inlineRadio1">Barang Hasil Pebaikan</label>
             </div>
           </div>
           <div class="form-group">

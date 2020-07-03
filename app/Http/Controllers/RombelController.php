@@ -31,10 +31,10 @@ class RombelController extends Controller
         return redirect()->route('rombel.index')->with('success', 'Data berhasil disimpan');
     }
 
-    public function show()
-    {
+    // public function show()
+    // {
     	
-    }
+    // }
 
     public function edit(Rombel $rombel)
     {

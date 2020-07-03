@@ -99,17 +99,16 @@ class Pasien2Controller extends Controller
         $i = 1;
 
         foreach ($datas as $data) {
-           
           $datasheet[$i] = array($i,
-                              $data['nis'],
-                              $data['nama_pasien'],
-                              $data->rombel->rombel,
-                              $data->rayon->rayon,
-                              $data['jenis_sakit'],
-                              $data->user->name
-                           );
-          $i++;
+            $data['nis'],
+            $data['nama_pasien'],
+            $data->rombel->rombel,
+            $data->rayon->rayon,
+            $data['jenis_sakit'],
+            $data->user->name
+          );
 
+          $i++;
         }
 
         $sheet->fromArray($datasheet);
